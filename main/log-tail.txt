@@ -1,22 +1,11 @@
-To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.5.0/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
-Daemon will be stopped at the end of the build 
-Calculating task graph as no cached configuration is available for tasks: testStandardDebugUnitTest assembleStandardDebug
-
-> Configure project :app
-WARNING: The option setting 'android.disallowKotlinSourceSets=false' is experimental.
-The current default is 'true'.
-Add android.sync.suppressAgpWarnings=UNSUPPORTED_PROJECT_OPTION_USE to the gradle.properties file to suppress this warning.
-Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target
-Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target
-Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target
 Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target
 
-> Task :app:preBuild UP-TO-DATE
 > Task :app:generateStandardDebugAssets UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
 > Task :app:preStandardDebugUnitTestBuild UP-TO-DATE
 > Task :app:preStandardDebugBuild UP-TO-DATE
-> Task :app:generateStandardDebugBuildConfig
 > Task :app:generateStandardDebugResources
+> Task :app:generateStandardDebugBuildConfig
 > Task :app:packageStandardDebugResources
 > Task :app:processStandardDebugNavigationResources
 > Task :app:javaPreCompileStandardDebug
@@ -55,14 +44,14 @@ Unable to strip the following libraries, packaging them as they are: libandroidx
 
 > Task :app:compileStandardDebugKotlin
 w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/de/zehstudios/tonieverwaltung/ui/ManagementDialogs.kt:186:36 'val Icons.Filled.Label: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Label.
-w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/de/zehstudios/tonieverwaltung/ui/TonieApp.kt:275:53 'val Icons.Filled.Label: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Label.
-w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/de/zehstudios/tonieverwaltung/ui/TonieScan.kt:221:27 Condition is always 'false'.
+w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/de/zehstudios/tonieverwaltung/ui/TonieApp.kt:283:53 'val Icons.Filled.Label: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Label.
+w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/de/zehstudios/tonieverwaltung/ui/TonieScan.kt:242:27 Condition is always 'false'.
 
 > Task :app:processStandardDebugJavaRes
 > Task :app:mergeStandardDebugJavaResource
 > Task :app:compileStandardDebugJavaWithJavac
-> Task :app:bundleStandardDebugClassesToRuntimeJar
 > Task :app:bundleStandardDebugClassesToCompileJar
+> Task :app:bundleStandardDebugClassesToRuntimeJar
 > Task :app:kspStandardDebugUnitTestKotlin
 > Task :app:compileStandardDebugUnitTestKotlin
 > Task :app:compileStandardDebugUnitTestJavaWithJavac NO-SOURCE
@@ -73,8 +62,89 @@ w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/
 > Task :app:packageStandardDebug
 > Task :app:assembleStandardDebug
 > Task :app:createStandardDebugApkListingFileRedirect
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_4-1792587401561.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_4-1792587740492.json
 
-BUILD SUCCESSFUL in 2m 16s
+BUILD SUCCESSFUL in 2m 34s
 46 actionable tasks: 46 executed
+Configuration cache entry stored.
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.5.0/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Calculating task graph as no cached configuration is available for tasks: assembleStandardRelease
+
+> Configure project :app
+WARNING: The option setting 'android.disallowKotlinSourceSets=false' is experimental.
+The current default is 'true'.
+Add android.sync.suppressAgpWarnings=UNSUPPORTED_PROJECT_OPTION_USE to the gradle.properties file to suppress this warning.
+Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target
+Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target
+
+> Task :app:generateStandardReleaseAssets UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preStandardReleaseBuild UP-TO-DATE
+> Task :app:mergeStandardReleaseJniLibFolders
+> Task :app:checkStandardReleaseDuplicateClasses
+> Task :app:generateStandardReleaseBuildConfig
+> Task :app:generateStandardReleaseResources
+> Task :app:packageStandardReleaseResources
+> Task :app:processStandardReleaseNavigationResources
+> Task :app:mergeStandardReleaseNativeLibs
+
+> Task :app:stripStandardReleaseDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libandroidx.graphics.path.so, libdatastore_shared_counter.so. Run with --info option to learn more.
+
+> Task :app:parseStandardReleaseLocalResources
+> Task :app:extractStandardReleaseNativeSymbolTables
+> Task :app:mergeStandardReleaseNativeDebugMetadata NO-SOURCE
+> Task :app:javaPreCompileStandardRelease
+> Task :app:generateStandardReleaseRFile
+> Task :app:checkStandardReleaseAarMetadata
+> Task :app:mapStandardReleaseSourceSetPaths
+> Task :app:compileStandardReleaseNavigationResources
+> Task :app:mergeStandardReleaseResources
+> Task :app:createStandardReleaseCompatibleScreenManifests
+> Task :app:extractDeepLinksStandardRelease
+> Task :app:processStandardReleaseMainManifest
+> Task :app:processStandardReleaseManifest
+> Task :app:processStandardReleaseManifestForPackage
+> Task :app:processStandardReleaseResources
+> Task :app:desugarStandardReleaseFileDependencies
+> Task :app:mergeStandardReleaseStartupProfile
+> Task :app:kspStandardReleaseKotlin
+> Task :app:mergeExtDexStandardRelease
+> Task :app:compileStandardReleaseKotlin
+> Task :app:mergeStandardReleaseArtProfile
+> Task :app:mergeStandardReleaseAssets
+> Task :app:compressStandardReleaseAssets
+> Task :app:extractStandardReleaseVersionControlInfo
+> Task :app:extractProguardFiles
+> Task :app:optimizeStandardReleaseResources
+> Task :app:collectStandardReleaseDependencies
+> Task :app:sdkStandardReleaseDependencyData
+> Task :app:validateSigningStandardRelease
+> Task :app:writeStandardReleaseAppMetadata
+> Task :app:writeStandardReleaseSigningConfigVersions
+
+> Task :app:compileStandardReleaseKotlin
+w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/de/zehstudios/tonieverwaltung/ui/ManagementDialogs.kt:186:36 'val Icons.Filled.Label: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Label.
+w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/de/zehstudios/tonieverwaltung/ui/TonieApp.kt:283:53 'val Icons.Filled.Label: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Label.
+w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/de/zehstudios/tonieverwaltung/ui/TonieScan.kt:242:27 Condition is always 'false'.
+
+> Task :app:processStandardReleaseJavaRes
+> Task :app:compileStandardReleaseJavaWithJavac
+> Task :app:mergeStandardReleaseJavaResource
+> Task :app:generateStandardReleaseLintVitalReportModel
+> Task :app:dexBuilderStandardRelease
+> Task :app:lintVitalAnalyzeStandardRelease
+> Task :app:mergeDexStandardRelease
+> Task :app:mergeStandardReleaseGlobalSynthetics
+> Task :app:compileStandardReleaseArtProfile
+> Task :app:lintVitalReportStandardRelease
+> Task :app:lintVitalStandardRelease
+> Task :app:packageStandardRelease
+> Task :app:assembleStandardRelease
+> Task :app:createStandardReleaseApkListingFileRedirect
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_7-1792587886984.json
+
+BUILD SUCCESSFUL in 3m 7s
+51 actionable tasks: 51 executed
 Configuration cache entry stored.

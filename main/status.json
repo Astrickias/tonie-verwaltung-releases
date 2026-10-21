@@ -1,11 +1,11 @@
 {
  "branch": "main",
- "commit": "fe8fc396fc4a3e2e2c708a192059d25c55a88b54",
+ "commit": "e8290cd7d4558eb7f2ee59e97fa9d2876877d631",
  "message": [
-  "Release-Repo: README mit Funktionen, Installation, Datenschutz und Haftungsausschluss; Hinweis in Release-Notizen und Wunschliste"
+  "Release 1.0.0 [release]"
  ],
  "status": "success",
- "run": "https://github.com/Astrickias/tonie-verwaltung/actions/runs/39603588254",
- "time": "2026-10-21T12:58:49+00:00",
+ "run": "https://github.com/Astrickias/tonie-verwaltung/actions/runs/39604376974",
+ "time": "2026-10-21T13:07:56+00:00",
  "errors": []
 }
