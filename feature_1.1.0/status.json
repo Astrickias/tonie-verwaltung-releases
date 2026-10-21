@@ -1,0 +1,11 @@
+{
+ "branch": "feature/1.1.0",
+ "commit": "5d4fbd8ffa618539803da4d248962b6ca9a93229",
+ "message": [
+  "1.1.0: Wert der Sammlung nach UVP (inkl. Wunschliste und Ersparnis), UVP-Preise einstellbar"
+ ],
+ "status": "success",
+ "run": "https://github.com/Astrickias/tonie-verwaltung/actions/runs/39667040640",
+ "time": "2026-10-21T20:07:14+00:00",
+ "errors": []
+}
