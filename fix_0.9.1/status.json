@@ -1,0 +1,11 @@
+{
+ "branch": "fix/0.9.1",
+ "commit": "c8ffa1536c8f98b057daff7a3bf82e8cd1a01aad",
+ "message": [
+  "0.9.1: Dunkles Design als Schalter, unabhängig vom System"
+ ],
+ "status": "success",
+ "run": "https://github.com/Astrickias/tonie-verwaltung/actions/runs/39595091555",
+ "time": "2026-10-21T11:54:40+00:00",
+ "errors": []
+}
