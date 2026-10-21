@@ -1,11 +1,11 @@
 {
  "branch": "main",
- "commit": "8842d3fd6ab8929ba588e2f09bb6c5ba646b71fb",
+ "commit": "d80dc62ca5a940995710b3bb185cd37000f37402",
  "message": [
-  "Release 0.9.2 [release]"
+  "Release 0.10.0 [release]"
  ],
  "status": "success",
- "run": "https://github.com/Astrickias/tonie-verwaltung/actions/runs/39596467891",
- "time": "2026-10-21T12:08:43+00:00",
+ "run": "https://github.com/Astrickias/tonie-verwaltung/actions/runs/39598510723",
+ "time": "2026-10-21T12:26:21+00:00",
  "errors": []
 }
