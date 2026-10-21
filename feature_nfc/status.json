@@ -1,0 +1,11 @@
+{
+ "branch": "feature/nfc",
+ "commit": "dc5cbf3972c9fd5adf88e30fa34acd361bd9f23e",
+ "message": [
+  "0.7.0: Expertenmodus mit NFC"
+ ],
+ "status": "success",
+ "run": "https://github.com/Astrickias/tonie-verwaltung/actions/runs/39584563548",
+ "time": "2026-10-21T10:29:10+00:00",
+ "errors": []
+}
