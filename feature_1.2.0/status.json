@@ -1,0 +1,11 @@
+{
+ "branch": "feature/1.2.0",
+ "commit": "c0a9c8ee8b2b39e1e0dd7a5e659227e594f08276",
+ "message": [
+  "1.2.0: Neues aufgeräumtes Layout zum Umschalten (Test), altes Layout bleibt Standard"
+ ],
+ "status": "success",
+ "run": "https://github.com/Astrickias/tonie-verwaltung/actions/runs/39670868106",
+ "time": "2026-10-21T20:36:20+00:00",
+ "errors": []
+}
