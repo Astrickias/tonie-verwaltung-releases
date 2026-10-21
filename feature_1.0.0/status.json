@@ -1,0 +1,11 @@
+{
+ "branch": "feature/1.0.0",
+ "commit": "2fc01fbf070bfc833cacffb1f6270c2b3b869c5c",
+ "message": [
+  "1.0.0: Tablets, Samsung DeX & Googlebooks – adaptive Navigation, Rechtsklick-Menü, Tastenkürzel, Foto wählen beim Scan"
+ ],
+ "status": "success",
+ "run": "https://github.com/Astrickias/tonie-verwaltung/actions/runs/39602190940",
+ "time": "2026-10-21T12:48:50+00:00",
+ "errors": []
+}
