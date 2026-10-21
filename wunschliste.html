@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Tonie-Wunschliste</title>
+  <style>
+    :root {
+      --bg: #fdf8f3; --card: #ffffff; --text: #2b2420; --muted: #7a6f68;
+      --accent: #c2410c; --accent-text: #ffffff; --ok: #15803d; --ok-bg: #dcfce7;
+      --taken-bg: #f1ece7; --border: #eadfd6;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1c1917; --card: #292524; --text: #f5f5f4; --muted: #a8a29e;
+        --accent: #fb923c; --accent-text: #1c1917; --ok: #4ade80; --ok-bg: #14532d;
+        --taken-bg: #3a3431; --border: #44403c;
+      }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    header { padding: 28px 16px 8px; max-width: 920px; margin: 0 auto; }
+    h1 { margin: 0 0 6px; font-size: 1.6rem; }
+    .lead { margin: 0; color: var(--muted); }
+    main { max-width: 920px; margin: 0 auto; padding: 16px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 12px; display: flex; flex-direction: column; gap: 6px; }
+    .card.taken { background: var(--taken-bg); opacity: .8; }
+    .card img { width: 100%; aspect-ratio: 1; object-fit: contain; }
+    .placeholder { width: 100%; aspect-ratio: 1; display: grid; place-items: center; font-size: 3rem; }
+    .series { font-size: .8rem; color: var(--muted); margin: 0; }
+    .title { font-weight: 700; margin: 0; flex: 1; }
+    button { font: inherit; border: 0; border-radius: 12px; padding: 10px 12px; cursor: pointer; }
+    .give { background: var(--accent); color: var(--accent-text); font-weight: 700; }
+    .mine { background: var(--ok-bg); color: var(--ok); font-weight: 700; }
+    .undo { background: transparent; color: var(--muted); text-decoration: underline; padding: 4px; }
+    .badge { font-size: .85rem; color: var(--muted); }
+    .message { text-align: center; padding: 48px 16px; color: var(--muted); }
+    dialog { border: 0; border-radius: 18px; padding: 20px; background: var(--card); color: var(--text); max-width: 340px; width: calc(100% - 32px); }
+    dialog::backdrop { background: rgba(0,0,0,.4); }
+    dialog input { width: 100%; font: inherit; padding: 10px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text); margin: 10px 0 14px; }
+    .row { display: flex; gap: 8px; justify-content: flex-end; }
+    footer { text-align: center; color: var(--muted); font-size: .8rem; padding: 24px 16px 40px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎧 Tonie-Wunschliste</h1>
+    <p class="lead" id="lead">Wird geladen…</p>
+  </header>
+  <main>
+    <div class="grid" id="grid"></div>
+    <div class="message" id="message" hidden></div>
+  </main>
+  <footer>Tippe auf „Ich schenke das“, dann sehen alle anderen, dass dieser Tonie schon vergeben ist.</footer>
+
+  <dialog id="nameDialog">
+    <form method="dialog" id="nameForm">
+      <strong id="dialogTitle">Wer schenkt?</strong>
+      <input id="nameInput" maxlength="40" placeholder="z. B. Oma Gabi" autocomplete="name" required>
+      <div class="row">
+        <button type="button" id="cancelBtn">Abbrechen</button>
+        <button type="submit" class="give">Reservieren</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    import {
+      getFirestore, doc, collection, onSnapshot, setDoc, deleteDoc
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+    import { firebaseConfig } from "./firebase-config.js";
+
+    const $ = (id) => document.getElementById(id);
+    const shareId = new URLSearchParams(location.search).get("id");
+
+    let items = [];
+    let reservations = {};
+    let uid = null;
+    let pendingItem = null;
+
+    function storedName() {
+      try { return localStorage.getItem("wunschliste-name") || ""; } catch { return ""; }
+    }
+    function storeName(name) {
+      try { localStorage.setItem("wunschliste-name", name); } catch { /* egal */ }
+    }
+
+    function showMessage(text) {
+      $("grid").hidden = true;
+      $("message").hidden = false;
+      $("message").textContent = text;
+    }
+
+    function render() {
+      const grid = $("grid");
+      grid.replaceChildren();
+      if (!items.length) {
+        showMessage("Die Wunschliste ist gerade leer. 🎉");
+        return;
+      }
+      $("grid").hidden = false;
+      $("message").hidden = true;
+      const free = items.filter((i) => !reservations[i.id]).length;
+      $("lead").textContent = `${items.length} Wünsche · ${free} noch frei`;
+
+      for (const item of items) {
+        const r = reservations[item.id];
+        const card = document.createElement("article");
+        card.className = "card" + (r && r.uid !== uid ? " taken" : "");
+
+        if (item.image) {
+          const img = document.createElement("img");
+          img.src = item.image;
+          img.alt = item.title;
+          img.loading = "lazy";
+          card.append(img);
+        } else {
+          const ph = document.createElement("div");
+          ph.className = "placeholder";
+          ph.textContent = "🎧";
+          card.append(ph);
+        }
+        if (item.series) {
+          const s = document.createElement("p");
+          s.className = "series";
+          s.textContent = item.series;
+          card.append(s);
+        }
+        const t = document.createElement("p");
+        t.className = "title";
+        t.textContent = item.title;
+        card.append(t);
+
+        if (!r) {
+          const b = document.createElement("button");
+          b.className = "give";
+          b.textContent = "🎁 Ich schenke das";
+          b.onclick = () => askName(item);
+          card.append(b);
+        } else if (r.uid === uid) {
+          const mine = document.createElement("div");
+          mine.className = "mine";
+          mine.style.padding = "10px 12px";
+          mine.style.borderRadius = "12px";
+          mine.textContent = `✓ Von dir reserviert (${r.name})`;
+          const undo = document.createElement("button");
+          undo.className = "undo";
+          undo.textContent = "Doch nicht";
+          undo.onclick = () => release(item);
+          card.append(mine, undo);
+        } else {
+          const badge = document.createElement("span");
+          badge.className = "badge";
+          badge.textContent = `🎁 Schon vergeben – ${r.name}`;
+          card.append(badge);
+        }
+        grid.append(card);
+      }
+    }
+
+    function askName(item) {
+      pendingItem = item;
+      $("dialogTitle").textContent = `„${item.title}“ schenken`;
+      $("nameInput").value = storedName();
+      $("nameDialog").showModal();
+      $("nameInput").focus();
+    }
+
+    $("cancelBtn").onclick = () => { pendingItem = null; $("nameDialog").close(); };
+    $("nameForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = $("nameInput").value.trim().slice(0, 40);
+      const item = pendingItem;
+      $("nameDialog").close();
+      if (!name || !item) return;
+      storeName(name);
+      try {
+        await setDoc(doc(db, "wishlists", shareId, "reservations", item.id), { name, uid, at: Date.now() });
+      } catch (err) {
+        alert("Das hat nicht geklappt – vielleicht war jemand schneller. Bitte Seite neu laden.");
+      }
+    });
+
+    async function release(item) {
+      try {
+        await deleteDoc(doc(db, "wishlists", shareId, "reservations", item.id));
+      } catch {
+        alert("Das hat nicht geklappt. Bitte Seite neu laden.");
+      }
+    }
+
+    if (!shareId) {
+      $("lead").textContent = "";
+      showMessage("Dieser Link ist unvollständig. Bitte den ganzen Link aus der Nachricht öffnen.");
+      throw new Error("keine ID");
+    }
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    try {
+      const cred = await signInAnonymously(auth);
+      uid = cred.user.uid;
+    } catch (err) {
+      $("lead").textContent = "";
+      showMessage("Die Wunschliste konnte gerade nicht geladen werden. Bitte später noch einmal probieren.");
+      throw err;
+    }
+
+    onSnapshot(doc(db, "wishlists", shareId), (snap) => {
+      const data = snap.data();
+      if (!snap.exists() || !data || data.active !== true) {
+        $("lead").textContent = "";
+        showMessage("Diese Wunschliste gibt es nicht (mehr).");
+        items = [];
+        return;
+      }
+      document.title = data.title || "Tonie-Wunschliste";
+      $("lead").textContent = data.title || "";
+      items = Array.isArray(data.items) ? data.items : [];
+      render();
+    }, () => showMessage("Diese Wunschliste gibt es nicht (mehr)."));
+
+    onSnapshot(collection(db, "wishlists", shareId, "reservations"), (snap) => {
+      reservations = {};
+      snap.forEach((d) => { reservations[d.id] = d.data(); });
+      if (items.length) render();
+    });
+  </script>
+</body>
+</html>
