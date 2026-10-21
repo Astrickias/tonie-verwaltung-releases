@@ -1,0 +1,11 @@
+{
+ "branch": "feature/fotos-wunschliste",
+ "commit": "dcf37786f75a08dc23f2a545ed13f1b1a0dd239b",
+ "message": [
+  "CI: Build-Ergebnis öffentlich im Release-Repo (Branch build-status) ablegen"
+ ],
+ "status": "success",
+ "run": "https://github.com/Astrickias/tonie-verwaltung/actions/runs/39579984017",
+ "time": "2026-10-21T09:52:43+00:00",
+ "errors": []
+}
