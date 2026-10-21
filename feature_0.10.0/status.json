@@ -1,0 +1,11 @@
+{
+ "branch": "feature/0.10.0",
+ "commit": "85bc7316b0dbb96bdc1789f8161957520ee967ec",
+ "message": [
+  "0.10.0: Tonies per Foto erkennen (Gemini), Flohmarkt-Foto-Check automatisch, eigener Name beim Hinzufügen"
+ ],
+ "status": "success",
+ "run": "https://github.com/Astrickias/tonie-verwaltung/actions/runs/39597359648",
+ "time": "2026-10-21T12:15:35+00:00",
+ "errors": []
+}
