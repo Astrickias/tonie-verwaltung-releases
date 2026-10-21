@@ -1,0 +1,11 @@
+{
+ "branch": "feature/eigene-namen",
+ "commit": "4dbb3d994c136b5c74837d1c15f4b1af0e717699",
+ "message": [
+  "0.8.0: Eigene Namen behalten, echten Katalog-Tonie zuordnen"
+ ],
+ "status": "success",
+ "run": "https://github.com/Astrickias/tonie-verwaltung/actions/runs/39586447488",
+ "time": "2026-10-21T10:44:22+00:00",
+ "errors": []
+}
