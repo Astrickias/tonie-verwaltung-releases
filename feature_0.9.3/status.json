@@ -1,0 +1,11 @@
+{
+ "branch": "feature/0.9.3",
+ "commit": "dda22a8bb77346f5d6364235797825e7b91e97e2",
+ "message": [
+  "0.9.3: Beim Hinzufügen aus dem Katalog nach eigenem Namen fragen"
+ ],
+ "status": "success",
+ "run": "https://github.com/Astrickias/tonie-verwaltung/actions/runs/39596236820",
+ "time": "2026-10-21T12:03:01+00:00",
+ "errors": []
+}
