@@ -1,11 +1,11 @@
 {
  "branch": "fix/1.1.1",
- "commit": "3c862b4eb514c3e61d4d86ad52e9b21461cb05f2",
+ "commit": "457b100f823928f9931c3d3bef5555b1cf9fce8e",
  "message": [
-  "1.1.1: App Check per Geräte-Token (Debug-Provider) – KI-Erkennung bleibt ab 2.11. nutzbar"
+  "1.1.1: App Check per Geräte-Token (Debug-Provider) – KI-Erkennung bleibt ab 2.11. nutzbar; Token senden/kopieren"
  ],
  "status": "success",
- "run": "https://github.com/Astrickias/tonie-verwaltung/actions/runs/39669549176",
- "time": "2026-10-21T20:27:07+00:00",
+ "run": "https://github.com/Astrickias/tonie-verwaltung/actions/runs/39670296869",
+ "time": "2026-10-21T20:32:48+00:00",
  "errors": []
 }

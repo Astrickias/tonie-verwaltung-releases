@@ -13,17 +13,17 @@ Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM tar
 
 > Task :app:preBuild UP-TO-DATE
 > Task :app:generateStandardDebugAssets UP-TO-DATE
-> Task :app:preStandardDebugUnitTestBuild UP-TO-DATE
 > Task :app:preStandardDebugBuild UP-TO-DATE
+> Task :app:preStandardDebugUnitTestBuild UP-TO-DATE
 > Task :app:generateStandardDebugBuildConfig
 > Task :app:generateStandardDebugResources
 > Task :app:packageStandardDebugResources
-> Task :app:javaPreCompileStandardDebug
 > Task :app:processStandardDebugNavigationResources
+> Task :app:javaPreCompileStandardDebug
 > Task :app:checkStandardDebugAarMetadata
 > Task :app:mapStandardDebugSourceSetPaths
-> Task :app:compileStandardDebugNavigationResources
 > Task :app:parseStandardDebugLocalResources
+> Task :app:compileStandardDebugNavigationResources
 > Task :app:generateStandardDebugRFile
 > Task :app:mergeStandardDebugResources
 > Task :app:createStandardDebugCompatibleScreenManifests
@@ -68,13 +68,13 @@ w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/
 > Task :app:compileStandardDebugUnitTestJavaWithJavac NO-SOURCE
 > Task :app:processStandardDebugUnitTestJavaRes
 > Task :app:dexBuilderStandardDebug
-> Task :app:testStandardDebugUnitTest
 > Task :app:mergeProjectDexStandardDebug
+> Task :app:testStandardDebugUnitTest
 > Task :app:packageStandardDebug
 > Task :app:assembleStandardDebug
 > Task :app:createStandardDebugApkListingFileRedirect
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_4-1792614121649.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_4-1792614435110.json
 
-BUILD SUCCESSFUL in 5m 20s
+BUILD SUCCESSFUL in 5m 37s
 46 actionable tasks: 46 executed
 Configuration cache entry stored.
