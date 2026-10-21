@@ -1,0 +1,11 @@
+{
+ "branch": "fix/1.0.1",
+ "commit": "9229dd6f5a3c714dd87b18e39bcde414ebad102c",
+ "message": [
+  "1.0.1: Katalog als feste Seite statt Pop-up (kein versehentliches Zuklappen beim Scrollen)"
+ ],
+ "status": "success",
+ "run": "https://github.com/Astrickias/tonie-verwaltung/actions/runs/39665168552",
+ "time": "2026-10-21T19:54:12+00:00",
+ "errors": []
+}
