@@ -2,13 +2,12 @@ Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM tar
 
 > Task :app:generateStandardDebugAssets UP-TO-DATE
 > Task :app:preBuild UP-TO-DATE
-> Task :app:preStandardDebugUnitTestBuild UP-TO-DATE
 > Task :app:preStandardDebugBuild UP-TO-DATE
-> Task :app:generateStandardDebugBuildConfig
 > Task :app:generateStandardDebugResources
+> Task :app:generateStandardDebugBuildConfig
 > Task :app:packageStandardDebugResources
-> Task :app:javaPreCompileStandardDebug
 > Task :app:processStandardDebugNavigationResources
+> Task :app:javaPreCompileStandardDebug
 > Task :app:checkStandardDebugAarMetadata
 > Task :app:mapStandardDebugSourceSetPaths
 > Task :app:compileStandardDebugNavigationResources
@@ -21,6 +20,7 @@ Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM tar
 > Task :app:processStandardDebugManifest
 > Task :app:processStandardDebugManifestForPackage
 > Task :app:processStandardDebugResources
+> Task :app:preStandardDebugUnitTestBuild UP-TO-DATE
 > Task :app:javaPreCompileStandardDebugUnitTest
 > Task :app:mergeStandardDebugNativeDebugMetadata NO-SOURCE
 > Task :app:mergeStandardDebugAssets
@@ -43,15 +43,15 @@ Unable to strip the following libraries, packaging them as they are: libandroidx
 > Task :app:writeStandardDebugSigningConfigVersions
 
 > Task :app:compileStandardDebugKotlin
-w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/de/zehstudios/tonieverwaltung/ui/ManagementDialogs.kt:186:36 'val Icons.Filled.Label: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Label.
-w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/de/zehstudios/tonieverwaltung/ui/TonieApp.kt:302:53 'val Icons.Filled.Label: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Label.
+w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/de/zehstudios/tonieverwaltung/ui/ManagementDialogs.kt:188:36 'val Icons.Filled.Label: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Label.
+w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/de/zehstudios/tonieverwaltung/ui/TonieApp.kt:279:53 'val Icons.Filled.Label: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Label.
 w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/de/zehstudios/tonieverwaltung/ui/TonieScan.kt:246:27 Condition is always 'false'.
 
 > Task :app:processStandardDebugJavaRes
+> Task :app:mergeStandardDebugJavaResource
 > Task :app:compileStandardDebugJavaWithJavac
 > Task :app:bundleStandardDebugClassesToRuntimeJar
 > Task :app:bundleStandardDebugClassesToCompileJar
-> Task :app:mergeStandardDebugJavaResource
 > Task :app:kspStandardDebugUnitTestKotlin
 > Task :app:compileStandardDebugUnitTestKotlin
 > Task :app:compileStandardDebugUnitTestJavaWithJavac NO-SOURCE
@@ -62,9 +62,9 @@ w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/
 > Task :app:packageStandardDebug
 > Task :app:assembleStandardDebug
 > Task :app:createStandardDebugApkListingFileRedirect
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_4-1792615834257.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_4-1792641284855.json
 
-BUILD SUCCESSFUL in 5m 55s
+BUILD SUCCESSFUL in 2m 47s
 46 actionable tasks: 46 executed
 Configuration cache entry stored.
 To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.5.0/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
@@ -82,24 +82,24 @@ Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM tar
 > Task :app:preBuild UP-TO-DATE
 > Task :app:preStandardReleaseBuild UP-TO-DATE
 > Task :app:mergeStandardReleaseJniLibFolders
-> Task :app:mergeStandardReleaseNativeLibs
 > Task :app:checkStandardReleaseDuplicateClasses
 > Task :app:generateStandardReleaseBuildConfig
+> Task :app:generateStandardReleaseResources
+> Task :app:packageStandardReleaseResources
+> Task :app:processStandardReleaseNavigationResources
+> Task :app:mergeStandardReleaseNativeLibs
 
 > Task :app:stripStandardReleaseDebugSymbols
 Unable to strip the following libraries, packaging them as they are: libandroidx.graphics.path.so, libdatastore_shared_counter.so. Run with --info option to learn more.
 
-> Task :app:generateStandardReleaseResources
 > Task :app:extractStandardReleaseNativeSymbolTables
 > Task :app:mergeStandardReleaseNativeDebugMetadata NO-SOURCE
-> Task :app:processStandardReleaseNavigationResources
+> Task :app:parseStandardReleaseLocalResources
 > Task :app:javaPreCompileStandardRelease
-> Task :app:packageStandardReleaseResources
+> Task :app:generateStandardReleaseRFile
 > Task :app:checkStandardReleaseAarMetadata
 > Task :app:mapStandardReleaseSourceSetPaths
 > Task :app:compileStandardReleaseNavigationResources
-> Task :app:parseStandardReleaseLocalResources
-> Task :app:generateStandardReleaseRFile
 > Task :app:mergeStandardReleaseResources
 > Task :app:createStandardReleaseCompatibleScreenManifests
 > Task :app:extractDeepLinksStandardRelease
@@ -125,8 +125,8 @@ Unable to strip the following libraries, packaging them as they are: libandroidx
 > Task :app:writeStandardReleaseSigningConfigVersions
 
 > Task :app:compileStandardReleaseKotlin
-w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/de/zehstudios/tonieverwaltung/ui/ManagementDialogs.kt:186:36 'val Icons.Filled.Label: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Label.
-w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/de/zehstudios/tonieverwaltung/ui/TonieApp.kt:302:53 'val Icons.Filled.Label: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Label.
+w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/de/zehstudios/tonieverwaltung/ui/ManagementDialogs.kt:188:36 'val Icons.Filled.Label: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Label.
+w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/de/zehstudios/tonieverwaltung/ui/TonieApp.kt:279:53 'val Icons.Filled.Label: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Label.
 w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/de/zehstudios/tonieverwaltung/ui/TonieScan.kt:246:27 Condition is always 'false'.
 
 > Task :app:processStandardReleaseJavaRes
@@ -143,8 +143,8 @@ w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/
 > Task :app:packageStandardRelease
 > Task :app:assembleStandardRelease
 > Task :app:createStandardReleaseApkListingFileRedirect
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_7-1792616178798.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_7-1792641449240.json
 
-BUILD SUCCESSFUL in 5m 26s
+BUILD SUCCESSFUL in 3m 35s
 51 actionable tasks: 51 executed
 Configuration cache entry stored.
