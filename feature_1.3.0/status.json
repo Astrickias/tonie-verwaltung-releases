@@ -1,0 +1,11 @@
+{
+ "branch": "feature/1.3.0",
+ "commit": "f54e0e02d6a8373e44b4f60d4c890976bed77361",
+ "message": [
+  "1.3.0: Einstellungsseite, Mehrfachauswahl für Kategorien/Themen, aufgeräumtes Menü"
+ ],
+ "status": "success",
+ "run": "https://github.com/Astrickias/tonie-verwaltung/actions/runs/39718692701",
+ "time": "2026-10-22T03:50:01+00:00",
+ "errors": []
+}
