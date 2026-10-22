@@ -1,0 +1,11 @@
+{
+ "branch": "fix/1.2.1",
+ "commit": "2ce51d781cdc536fbb81dbc97da7b75788f3eeb3",
+ "message": [
+  "1.2.1: Menü scrollbar, Layout-Schalter nach oben"
+ ],
+ "status": "success",
+ "run": "https://github.com/Astrickias/tonie-verwaltung/actions/runs/39718049791",
+ "time": "2026-10-22T03:42:46+00:00",
+ "errors": []
+}

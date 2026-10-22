@@ -1,0 +1,78 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.5.0/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Calculating task graph as no cached configuration is available for tasks: testStandardDebugUnitTest assembleStandardDebug
+
+> Configure project :app
+WARNING: The option setting 'android.disallowKotlinSourceSets=false' is experimental.
+The current default is 'true'.
+Add android.sync.suppressAgpWarnings=UNSUPPORTED_PROJECT_OPTION_USE to the gradle.properties file to suppress this warning.
+Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target
+Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target
+Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target
+Kotlin does not yet support 25 JDK target, falling back to Kotlin JVM_24 JVM target
+
+> Task :app:generateStandardDebugAssets UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preStandardDebugBuild UP-TO-DATE
+> Task :app:preStandardDebugUnitTestBuild UP-TO-DATE
+> Task :app:generateStandardDebugBuildConfig
+> Task :app:generateStandardDebugResources
+> Task :app:packageStandardDebugResources
+> Task :app:processStandardDebugNavigationResources
+> Task :app:javaPreCompileStandardDebug
+> Task :app:checkStandardDebugAarMetadata
+> Task :app:mapStandardDebugSourceSetPaths
+> Task :app:compileStandardDebugNavigationResources
+> Task :app:parseStandardDebugLocalResources
+> Task :app:generateStandardDebugRFile
+> Task :app:mergeStandardDebugResources
+> Task :app:createStandardDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksStandardDebug
+> Task :app:processStandardDebugMainManifest
+> Task :app:processStandardDebugManifest
+> Task :app:processStandardDebugManifestForPackage
+> Task :app:processStandardDebugResources
+> Task :app:javaPreCompileStandardDebugUnitTest
+> Task :app:mergeStandardDebugNativeDebugMetadata NO-SOURCE
+> Task :app:mergeStandardDebugAssets
+> Task :app:compressStandardDebugAssets
+> Task :app:generateStandardDebugGlobalSynthetics
+> Task :app:checkStandardDebugDuplicateClasses
+> Task :app:desugarStandardDebugFileDependencies
+> Task :app:kspStandardDebugKotlin
+> Task :app:mergeExtDexStandardDebug
+> Task :app:mergeLibDexStandardDebug
+> Task :app:mergeStandardDebugJniLibFolders
+> Task :app:mergeStandardDebugNativeLibs
+
+> Task :app:stripStandardDebugDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libandroidx.graphics.path.so, libdatastore_shared_counter.so. Run with --info option to learn more.
+
+> Task :app:validateSigningStandardDebug
+> Task :app:writeStandardDebugAppMetadata
+> Task :app:writeStandardDebugSigningConfigVersions
+> Task :app:compileStandardDebugKotlin
+w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/de/zehstudios/tonieverwaltung/ui/ManagementDialogs.kt:186:36 'val Icons.Filled.Label: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Label.
+w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/de/zehstudios/tonieverwaltung/ui/TonieApp.kt:318:53 'val Icons.Filled.Label: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Label.
+w: file:///home/runner/work/tonie-verwaltung/tonie-verwaltung/app/src/main/java/de/zehstudios/tonieverwaltung/ui/TonieScan.kt:246:27 Condition is always 'false'.
+
+> Task :app:processStandardDebugJavaRes
+> Task :app:mergeStandardDebugJavaResource
+> Task :app:compileStandardDebugJavaWithJavac
+> Task :app:bundleStandardDebugClassesToRuntimeJar
+> Task :app:bundleStandardDebugClassesToCompileJar
+> Task :app:kspStandardDebugUnitTestKotlin
+> Task :app:compileStandardDebugUnitTestKotlin
+> Task :app:compileStandardDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :app:processStandardDebugUnitTestJavaRes
+> Task :app:testStandardDebugUnitTest
+> Task :app:dexBuilderStandardDebug
+> Task :app:mergeProjectDexStandardDebug
+> Task :app:packageStandardDebug
+> Task :app:assembleStandardDebug
+> Task :app:createStandardDebugApkListingFileRedirect
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_4-1792640463743.json
+
+BUILD SUCCESSFUL in 1m 56s
+46 actionable tasks: 46 executed
+Configuration cache entry stored.
